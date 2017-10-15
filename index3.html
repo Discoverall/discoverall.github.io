@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Maps</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    div{
+      font-family:verdana;
+    }
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #mapcontainer{
+        height: 450px;
+      }
+      #bottom_container{
+        height: 250px;
+        background-color: #ABDD93;
+      }
+
+      #titleContainer{
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapcontainer"><div id="map"></div></div>
+    <div id="bottom_container">
+      <div id="titleContainer">Total Estimated Time of Date Night: <b>5.5hrs~</b></div>
+    </div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: 41.764222, lng: -87.633517};
+        var myLatLng2 = {lat: 41.887816, lng: -87.626032};//41.887816, -87.626032
+        var myLatLng3 = {lat: 41.890617, lng: -87.631264};  //41.890617, -87.631264
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Hello World!'
+        });
+        var marker2 = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Hello World!'
+        });
+        var marker3 = new google.maps.Marker({
+          position: myLatLng3,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9vO-86Ka4HFy1H1i_N4NuoVfKC7EdpxY&callback=initMap">
+    </script>
+  </body>
+</html>
